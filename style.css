@@ -1,27 +1,35 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: antiquewhite;
-    
+    background-color: white;
 }
 
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 h1 {
     font-size: x-large;
     margin: 5px;
+    color: #26547C;
+}
+
+.tituloDiario {
+    display: none;
+}
+
+.imageLogo {
+    width: 70px;
 }
 
 .menuHamburguesa {
     color: white;
     font-size: xx-large;
-
 }
 
 .nav {
-    background-color: black;
+    background-color: #26547C;
     display: flex;
     justify-content: right;
     padding: 10px;
@@ -44,8 +52,9 @@ h1 {
 }
 
 .noticia {
-    background-color: aliceblue;
-    padding-left: 10px;
+
+    padding: 3px;
+    border-radius: 1px;
 }
 
 .noticia a {
@@ -53,98 +62,80 @@ h1 {
     color: black;
 }
 
-.tituloDescripcion {}
-
-.imgNoticia {
-    width: 100%;
-    padding: 0;
+.tituloDescripcion p {
+    color: gray;
 }
 
+.descripcionBreve {
+    font-weight: 600;
+    margin: 0px;
+}
 
-.columna {}
+.imgNoticia {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+    padding: 0;
+}
 
 .columna-2 {
     display: none;
 }
- .noticia h1 {
-display: none;
- }
 
- .noticia h2 {
-margin: 0;
- }
-
-.footer{
-    padding-left: 10px;
+.columna-3 {
+    display: none;
 }
 
-
-@media screen and (min-width: 1025px) {
-    .menuHamburguesa {
-        display: none;
-    }
-
-    .nav_ul {
-        display: block;
-    }
-
-    .nav {
-        background-color: black;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    h1 {
-        font-size: xx-large;
-        margin: 10px;
-    }
-     .columna-2 p{
-        margin: 0;
-    }
-
-    .filas {
-        display: flex;
-        justify-content: center; /* Centra horizontalmente las columnas */
-        gap: 16px; /* Espacio entre columnas */
-    }
-
-    .columna {
-        
-        background: #f4f4f4;
-        padding: 2px;
-        border: 2px solid #ddd; 
-        box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
-    }
-
-    .columna-2 {
-        display: block;
-    }
-
-    .columna-1 {
-        flex: 3;
-    }
-
-    .columna-2 {
-        flex: 1;
-        /* margin: auto;  Para que quede alineado con la principal*/
-        /* Centra las columnas laterales */
-    }
-         .noticia h1 {
-         display: block;
-         }
-
-    .imgNoticia {
-        width: 100%;
-    }
-    h2{
-        padding: 0px;
-    }
-   
-    .columna-2 .noticia {
-             margin-bottom: 20px; /*Espacio entre cada noticias */
-        }
-        .columna-1 .noticia{
-            margin-bottom: 20px;
-        }
+.noticia h1 {
+    display: none;
 }
+
+.noticia h2 {
+    margin: 0;
+    transition: font-size 0.3s ease;
+    /* Añade transición suave para el cambio de tamaño */
+}
+
+.noticia h2:hover {
+    font-size: xx-large;
+    /* Cambia el tamaño de la fuente al pasar el mouse */
+}
+
+.footer {
+    padding: 20px;
+    background-color: #26547C;
+    color: white;
+    /* Color de texto blanco */
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan en pantallas más pequeñas */
+}
+
+.footer-section {
+    flex: 1;
+    max-width: 200px;
+    margin: 10px;
+}
+
+.footer h4,
+.footer h5,
+.footer p,
+.footer a {
+    color: white;
+    /* Color de texto blanco */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    /* Subraya el texto al pasar el ratón */
+}
+
+.footer-section.contact,
+.footer-section.social,
+.footer-section.links {
+    display: none;
+}
+

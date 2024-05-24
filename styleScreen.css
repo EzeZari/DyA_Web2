@@ -1,0 +1,111 @@
+@media screen and (min-width: 1025px) {
+    .tituloDiario {
+        display: block;
+    }
+
+    .menuHamburguesa {
+        display: none;
+    }
+
+    .nav_ul {
+        display: block;
+    }
+
+    .nav {
+        background-color: #26547C;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: xx-large;
+        margin: 10px;
+    }
+
+    .columna-2 p {
+        margin: 0;
+    }
+
+    .filas {
+        display: flex;
+        justify-content: center;
+        /* Centra horizontalmente las columnas */
+        gap: 35px;
+        /* Espacio entre columnas */
+        align-items: flex-start;
+        /* Alinea las columnas en la parte superior */
+        padding-top: 10px;
+    }
+
+    .columna {
+        padding: 2px;
+        border: 1px #ddd;
+        box-sizing: border-box;
+        /* Incluye padding y border en el tamaño total del elemento */
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* Añadir sombra */
+        transition: box-shadow 0.3s ease;
+        /* Añadir transición suave */
+    }
+
+    .columna:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        /* Aumentar la sombra al pasar el ratón */
+    }
+
+    .columna-2 {
+        flex: 1;
+        align-self: flex-start;
+        display: block;
+    }
+
+    .columna-1 {
+        flex: 3;
+        margin-bottom: 10px;
+
+    }
+
+    .noticia h1 {
+        display: block;
+    }
+
+    .imgNoticia {
+        width: 95%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    h2 {
+        padding: 0px;
+    }
+
+    .columna-2 .noticia h2 {
+        margin-top: 20px;
+        /* Espacio entre cada noticia */
+        font-size: medium;
+        transition: font-size 0.3s ease;
+    }
+
+    .columna-2 .noticia h2:hover {
+        font-size: large;
+        /* Cambia el tamaño de la fuente al pasar el mouse */
+    }
+
+    .columna-1 .noticia {
+        margin-bottom: 20px;
+    }
+
+    .columna-3 {
+        flex: 0.5;
+        align-self: flex-start;
+        display: block;
+    }
+
+    .footer-section.contact,
+    .footer-section.social,
+    .footer-section.links {
+        display: block;
+    }
+}
