@@ -107,5 +107,22 @@
     .footer-section.social,
     .footer-section.links {
         display: block;
+        grid-template-columns: repeat(2, 1fr);
     }
+
+.formContainer {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+
 }

@@ -45,8 +45,18 @@ h1 {
     text-decoration: none;
     padding-left: 20px;
     font-weight: bold;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    /* Transición suave para el cambio de tamaño y sombra */
 }
 
+.nav ul a:hover {
+    color: white;
+    /* Mantén el color del texto blanco */
+    transform: scale(1.1);
+    /* Agranda solo el texto */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Sombra de texto blanca */
+}
 .Noticias {
     margin-top: 10px;
 }
@@ -124,13 +134,13 @@ h1 {
 .footer p,
 .footer a {
     color: white;
-    /* Color de texto blanco */
     text-decoration: none;
+    font-size: medium;
 }
 
 .footer a:hover {
     text-decoration: underline;
-    /* Subraya el texto al pasar el ratón */
+   
 }
 
 .footer-section.contact,
@@ -139,3 +149,56 @@ h1 {
     display: none;
 }
 
+.tituloForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btnPosition {
+    display: flex;
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 15px 70px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: unset;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    /* Efecto de agrandamiento al pasar el ratón */
+}
+
+button:active {
+    background-color: #26547C;
+    color: white;
+    /* Color de fondo al hacer clic */
+    transform: scale(0.95);
+    /* Efecto de reducción al hacer clic */
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}

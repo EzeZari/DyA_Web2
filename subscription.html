@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscribirse - Socio de Campo</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleScreen.css">
+</head>
+<body>
+    <header class="header">
+        <img class="imageLogo" src="img/Logo.png" alt="">
+        <h1 class="tituloDiario"> Socio de Campo </h1>
+    </header>
+    <diV>
+    
+        <nav class="nav">
+            <a class="menuHamburguesa"> ☰ </a>
+            <ul class="nav_ul">
+                <a href="/index.html">Inicio</a>
+                <a href="#">Noticias</a>
+                <a href="#">Resultados</a>
+                <a href="#">Calendario</a>
+                <a href="#">Equipos</a>
+                <a href="#">Competiciones</a>
+                <a href="/subscription.html">Suscribirse</a>
+            </ul>
+        </nav>
+    </diV>
+    <div class="tituloForm">
+    <h2>Formulario de Registro</h2>
+    </div>
+    
+    <form class="formContainer">
+
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <div id="nombreError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div id="emailError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+            <div id="contrasenaError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="repetirContrasena">Repetir Contraseña:</label>
+            <input type="password" id="repetirContrasena" name="repetirContrasena" required>
+            <div id="repetirContrasenaError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+            <div id="edadError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <div id="telefonoError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+            <div id="direccionError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+            <div id="ciudadError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="codigoPostal">Código Postal:</label>
+            <input type="text" id="codigoPostal" name="codigoPostal" required>
+            <div id="codigoError" class="error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" required>
+            <div id="dniError" class="error"></div>
+        </div>
+   </form>
+        <div class="btnPosition">
+            <button id="button" type="submit">Registrar</button>
+        
+        </div>
+        <footer>
+            <div class="footer">
+                <div class="footer-section">
+                    <h4>Socio de Campo</h4>
+                    <p>&copy; 2024 Socio de Campo. Todos los derechos reservados.</p>
+                    <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+                </div>
+                <div class="footer-section contact">
+                    <h5>Contacto</h5>
+                    <p>Email: contacto@sociodecampo.com</p>
+                    <p>Teléfono: +34 123 456 789</p>
+                </div>
+                <div class="footer-section social">
+                <h5>Redes Sociales</h5>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">Instagram</a></p>
+            </div>
+            <div class="footer-section links">
+                <h5>Enlaces Útiles</h5>
+                <p><a href="#">Acerca de Nosotros</a></p>
+                <p><a href="#">Contáctanos</a></p>
+                <p><a href="#">Publicidad</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="/validations.js"></script>
+</body>
+</html>
