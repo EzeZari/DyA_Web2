@@ -190,7 +190,7 @@ function validarDNI(dni, event) {
 function mostrarMensajeEmergente(mensaje) {
     alert(mensaje);
 }
-// evento para el botón "Enviar"
+
 button.addEventListener('click', function (event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
 
@@ -208,7 +208,6 @@ button.addEventListener('click', function (event) {
     var errores = [];
     var mensaje = '';
 
-    // Validar cada campo
     validarNombre(nombre, event);
     validarEmail(email, event);
     validarContraseña(contrasena, event);
@@ -220,7 +219,6 @@ button.addEventListener('click', function (event) {
     validarCodigoPostal(codigoPostal, event);
     validarDNI(dni, event);
 
-    // Recoger los errores
     errors.forEach((error, index) => {
         if (error.textContent) {
             errores.push(error.textContent);
@@ -229,19 +227,72 @@ button.addEventListener('click', function (event) {
 
     if (errores.length > 0) {
         mensaje = 'Errores en el formulario:\n' + errores.join('\n');
+        mostrarMensajeEmergente(mensaje);
     } else {
-        mensaje = `Formulario enviado con éxito:\n
-            Nombre: ${nombre}\n
-            Email: ${email}\n
-            Contraseña: ${contrasena}\n
-            Edad: ${edad}\n
-            Teléfono: ${telefono}\n
-            Dirección: ${direccion}\n
-            Ciudad: ${ciudad}\n
-            Código Postal: ${codigoPostal}\n
-            DNI: ${dni}`;
+        var formData = {
+            nombre: nombre,
+            email: email,
+            contraseña: contrasena,
+            edad: edad,
+            telefono: telefono,
+            direccion: direccion,
+            ciudad: ciudad,
+            codigoPostal: codigoPostal,
+            dni: dni
+        };
+
+        // Realizar la solicitud POST al servidor
+        fetch('https://jsonplaceholder.typicode.com/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Mostrar modal con mensaje de éxito y datos recibidos
+                mostrarModal('Suscripción exitosa', data);
+                // Guardar los datos recibidos en LocalStorage
+                localStorage.setItem('userData', JSON.stringify(data));
+            })
+            .catch(error => {
+                mostrarModal('Error', error.message);
+            });
+    }
+    limpiarCampos()
+});
+
+
+function mostrarModal(titulo, mensaje) {
+    var modal = document.getElementById('modal');
+    var modalTitle = document.getElementById('modal-title');
+    var modalMessage = document.getElementById('modal-message');
+
+    // Mostrar el modal
+    modal.style.display = 'block';
+    modalTitle.textContent = titulo;
+
+    if (typeof mensaje === 'object') {
+        modalMessage.textContent = JSON.stringify(mensaje, null, 2);
+    } else {
+        modalMessage.textContent = mensaje;
     }
 
-    mostrarMensajeEmergente(mensaje);
-});
+    var closeModal = document.getElementsByClassName('close-modal')[0];
+    closeModal.onclick = function () {
+        modal.style.display = 'none';
+    }
+}
+
+function limpiarCampos() {
+    inputs.forEach(input => {
+        input.value = '';
+    });
+}
 
